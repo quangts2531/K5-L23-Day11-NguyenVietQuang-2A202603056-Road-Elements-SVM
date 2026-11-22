@@ -1,0 +1,50 @@
+{
+  "manifest": "road-delivery/1",
+  "format": "CVAT for images 1.1",
+  "guideline": "Road v1.0",
+  "name": "NguyenVietQuang",
+  "revision": 1,
+  "created_at": "2026-11-22T02:31:29+00:00",
+  "files": [
+    {
+      "file": "NguyenVietQuang-front.zip",
+      "bytes": 48927,
+      "sha256": "10cad6cc37e0a188caba1c5377c49215fe519f4574c4acdda6f1bcf5f5182b7a",
+      "contains_images": false,
+      "images": 12,
+      "images_unlabelled": 0,
+      "images_all_tags": 12,
+      "shapes_by_label": {
+        "crosswalk": 3,
+        "drivable": 28,
+        "lane": 32,
+        "road_curb": 13,
+        "traffic_light": 23,
+        "traffic_sign": 16
+      }
+    },
+    {
+      "file": "NguyenVietQuang-fisheye.zip",
+      "bytes": 26078,
+      "sha256": "0208ad1b148519c83f2936413cdae6ae900a67aa027972ac396b093c0620b382",
+      "contains_images": false,
+      "images": 8,
+      "images_unlabelled": 0,
+      "images_all_tags": 8,
+      "shapes_by_label": {
+        "crosswalk": 8,
+        "drivable": 8,
+        "lane": 8,
+        "road_curb": 11,
+        "traffic_light": 2,
+        "traffic_sign": 1
+      }
+    }
+  ],
+  "lint": {
+    "nặng": 4,
+    "chính": 0,
+    "nhẹ": 0
+  },
+  "note": "Tạo bởi road_check lint. Mô tả file đã gửi, không phải kết luận chất lượng."
+}
