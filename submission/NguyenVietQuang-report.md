@@ -47,15 +47,16 @@ Số liệu theo lần lint mới nhất trên bốn export nguồn (28 ảnh); 
 
 Lint hai zip core còn bốn cảnh báo QC1-02; lint cả bốn zip nguồn báo tổng cộng năm, thêm A14 thiếu R1 trong front-extra. Coach xác nhận các vị trí này không có vạch nhìn thấy được và chấp nhận ngoại lệ. Do đó, **không có lỗi gán nhãn được xác nhận trong năm cảnh báo này**; chúng vẫn xuất hiện trong lint dưới dạng cảnh báo hình thức. Lint không báo mã nào khác, nhưng kết quả này không thay thế việc so toàn bộ nhãn với GT.
 
-## 4. Phiếu QC 1 nhận được
+## 4. Trạng thái theo kết quả lint và coach
 
-Người QC được chỉ định: Nguyễn Trường Giang (`member_id: 2A202603073`).  
-Phiếu QC1 peer-review từ Nguyễn Trường Giang chưa được cung cấp trong workspace, nên chưa ghi nhận quyết định review. Riêng với lô của người nộp, coach xác nhận 5 cảnh báo QC1-02 là các vị trí không có vạch nhìn thấy và chấp nhận miễn; đây là xác nhận ngoại lệ, không phải phiếu peer-review.
+Phiếu peer-review từ Nguyễn Trường Giang chưa có trong workspace; vì vậy chưa có kết luận QC1 cho toàn lô. Bảng dưới đây chỉ phân loại finding lint trên lô của người nộp.
 
-| Mã lỗi | Số lỗi | Đồng ý? | Đã sửa? |
-| --- | ---: | --- | --- |
-| QC1-02 ở lô của người nộp | 0 lỗi thực; 5 cảnh báo lint được coach miễn | Đồng ý | Không cần sửa nhãn |
-| Phiếu peer-review từ Nguyễn Trường Giang | Chưa nhận được bản phiếu | Chưa xác định | Chưa xác định |
+| Trạng thái finding | Ảnh | Kết quả |
+| --- | --- | --- |
+| QC1-02 được coach miễn | A05, A06, A09, A14 | Không yêu cầu rework cho các finding này; lint vẫn in 5 cảnh báo (A05 có 2). |
+| Không có finding lint hiện tại | A01–A04, A07–A08, A10–A13, A15–A16, B01–B12 | Chưa được peer-review thủ công hoặc đối chiếu với GT; không tự kết luận Release theo ảnh. |
+
+Release / Hold / Rework là quyết định ở cấp lô. Chưa có mẫu peer-review 6 ảnh và phép tính tỷ lệ lỗi chính, nên **chưa thể kết luận quyết định tổng thể**. Xác nhận ngoại lệ của coach chỉ xử lý các finding QC1-02 nêu trên.
 
 ## 5. Kiểm file export
 

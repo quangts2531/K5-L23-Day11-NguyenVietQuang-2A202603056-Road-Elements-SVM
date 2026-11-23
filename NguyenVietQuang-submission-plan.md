@@ -1,43 +1,36 @@
-# Kế hoạch chốt bài nộp — Nguyễn Việt Quang
+# Rà soát gói nộp — Nguyễn Việt Quang
 
 Ngày rà soát: 2026-11-23  
-Phạm vi: bài Road Elements & SVM, Road v1.0  
-Trạng thái: **gói nhãn/manifest, report template và 3/3 ảnh minh chứng đã chốt; CVAT 2.74.1, trạng thái completed đã xác nhận. Còn export của Nguyễn Trường Giang để hoàn tất phiếu QC1 peer-review.**
+Phạm vi: Road Elements & SVM, Road v1.0
 
-## Đã xác nhận
+## Trạng thái hiện tại
 
-- Có đủ 28 ảnh đầu vào trong `data/` và bốn export: front, front-extra, fisheye, fisheye-extra.
-- `road_check lint` đọc được cả bốn zip, tổng cộng 28 ảnh; không có ảnh nào bị gói kèm trong zip.
-- Có 5 cảnh báo QC1-02: A05 thiếu L1/R1, A06 thiếu R1, A09 thiếu R1, A14 thiếu R1. Coach xác nhận cả bốn ảnh không có vạch nhìn thấy được và chấp nhận miễn QC1-02. Lint vẫn hiện cảnh báo vì không lưu quyết định coach.
-- Hai zip bàn giao đã được tạo trong `submission/` bằng cách gộp hai export core với hai export extra; zip nguồn vẫn được giữ nguyên trong `result/`. Tên fisheye cuối đã đúng.
-- Manifest mới `submission/NguyenVietQuang-manifest.json` khớp byte/hash của hai zip cuối: 16 ảnh front, 12 ảnh fisheye, tất cả đủ tag, không kèm ảnh.
-- Lint cuối đọc được đủ 28 ảnh. Năm cảnh báo QC1-02 nằm ở A05, A06, A09, A14; coach xác nhận không có vạch nhìn thấy và miễn cả bốn trường hợp. Không có lỗi gán nhãn được xác nhận trong năm cảnh báo này và lint không báo mã nào khác. Đây chưa phải kết luận kiểm toàn bộ nhãn theo GT.
-- CVAT server trả version 2.74.1; người nộp xác nhận cả bốn task đã completed và polyline được vẽ từ dưới lên.
-- Ba ảnh CVAT thật `front.png`, `fisheye.png`, `01-project-labels.png` đã được thêm vào report.
-- Metadata trong hai ZIP cuối khớp taxonomy Road v1.0: sáu label, kiểu hình, thuộc tính và giá trị; lint không báo label/kiểu/value lạ.
-- `templates/report.md` và `templates/qc1_form.md` đã được chỉnh để tách cảnh báo lint, ngoại lệ coach và lỗi peer-review được xác nhận.
+Trong `submission/` hiện có hai ZIP bàn giao, manifest, report và bảng QC Release / Hold / Rework. Có đủ 3 ảnh minh chứng trong `submission/screenshots/`. Theo yêu cầu của Quang, không tạo/đính kèm `NguyenVietQuang-qc1-for-NguyenTruongGiang.md`; bảng QC ba trạng thái là tài liệu QC đang có.
 
-## Checklist 5 file nộp
+## Đã kiểm tra
 
-| File yêu cầu | Trạng thái | Việc còn lại |
+- Hai ZIP mở được bằng `road_check lint`, tổng cộng 28 ảnh: front A01–A16 và fisheye B01–B12.
+- Hash SHA-256 và kích thước hai ZIP khớp manifest; manifest ghi `contains_images=false`, 16/16 và 12/12 ảnh đủ tag.
+- Có 3 ảnh CVAT thật và report đã liên kết đúng đường dẫn tương đối.
+- Theo xác nhận của người nộp, bốn task đã `completed`, CVAT server là 2.74.1, polyline vẽ từ dưới lên.
+- Lint lần rà soát này còn 5 cảnh báo QC1-02: A05 thiếu L1/R1, A06 thiếu R1, A09 thiếu R1, A14 thiếu R1. Coach đã xác nhận không thấy vạch và miễn các cảnh báo; thông tin này được ghi trong report và bảng QC. Lint không báo mã lỗi nào khác.
+- Chưa có kiểm thủ công mẫu 6 ảnh, số nhãn kiểm và tỷ lệ lỗi chính. Vì vậy QC status để quyết định lô là chưa kết luận, không tự gán Release.
+
+## Đối chiếu yêu cầu nộp
+
+| Thành phần | Hiện có | Ghi chú |
 | --- | --- | --- |
-| `NguyenVietQuang-front.zip` | Sẵn sàng; 16 ảnh | Không |
-| `NguyenVietQuang-fisheye.zip` | Sẵn sàng; 12 ảnh | Không |
-| `NguyenVietQuang-manifest.json` | Sẵn sàng; hash/byte khớp | Không |
-| `NguyenVietQuang-report.md` | Đã điền dữ liệu có căn cứ; đủ 3 ảnh | Phiếu QC1 nhận từ Giang sẽ bổ sung sau theo yêu cầu |
-| `NguyenVietQuang-qc1-for-NguyenTruongGiang.md` | Đã tạo bản nháp, chưa thể nộp | Cần ZIP front, ZIP fisheye và manifest của Giang để kiểm 6 ảnh, điền 12 mã và kết luận |
+| `NguyenVietQuang-front.zip` | Có | 16 ảnh, manifest/hash khớp |
+| `NguyenVietQuang-fisheye.zip` | Có | 12 ảnh, manifest/hash khớp |
+| `NguyenVietQuang-manifest.json` | Có | revision 1; không kèm ảnh; đủ tag |
+| `NguyenVietQuang-report.md` | Có | Có số liệu, ngoại lệ coach, bảng QC và 3 ảnh minh chứng |
+| `NguyenVietQuang-qc-status.md` | Có | Thể hiện Release / Hold / Rework và các finding theo ảnh; quyết định tổng thể chưa kết luận |
+| Phiếu QC1 cho Nguyễn Trường Giang | Không có theo yêu cầu của Quang | `SUBMISSION.md` gốc liệt kê phiếu này trong 5 file bắt buộc; thay bằng bảng QC status là sai khác so với checklist gốc |
 
-## Việc cần làm theo thứ tự
+## Còn thiếu / cần biết trước khi nộp
 
-1. **Đã chốt hai zip bàn giao.** `submission/NguyenVietQuang-front.zip` gồm A01–A16; `submission/NguyenVietQuang-fisheye.zip` gồm B01–B12. Bốn zip nguồn còn nguyên trong `result/`.
-2. **Đã tạo manifest cuối.** `submission/NguyenVietQuang-manifest.json` ghi revision 1; linter xác nhận 16/16 và 12/12 ảnh đủ tag, `contains_images=false`, đúng hash/byte.
-3. **Ảnh minh chứng report đã đủ.** Đã có Project → Labels, front và fisheye trong `submission/screenshots/`; phiếu QC1 nhận từ Nguyễn Trường Giang sẽ bổ sung sau.
-4. **Hoàn tất Phiếu QC1 cho Nguyễn Trường Giang.** Bản nháp `submission/NguyenVietQuang-qc1-for-NguyenTruongGiang.md` đã có. Cần ZIP front, ZIP fisheye và manifest của Giang; sau đó kiểm thủ công 6 ảnh, ghi số nhãn, 12 mã, lỗi/ảnh/nhãn/mức, tỉ lệ và quyết định. Không dùng `NguyenVietQuang-qc1-history-draft.md` thay cho phiếu này: bản đó chỉ ghi lint của lô Quang và xác nhận ngoại lệ của coach.
-5. **Nộp đúng 5 file sau khi hoàn tất mục 3–4.** Hai zip, manifest, report và phiếu QC1 cho peer.
+1. **Khác checklist gốc:** `SUBMISSION.md` yêu cầu phiếu QC1 kiểm bài peer. Gói hiện dùng bảng QC ba trạng thái thay cho phiếu đó theo yêu cầu của Quang. Nếu coach chấp nhận cách thay thế này, không còn thiếu file nào khác trong gói đã chọn; nếu áp dụng nguyên checklist, mục QC1 vẫn thiếu.
+2. **Chưa có kết luận QC toàn lô:** Phiếu peer-review 6 ảnh và tỷ lệ lỗi chính chưa có, nên Release chưa được xác nhận. Đây là giới hạn bằng chứng, không phải lỗi lint mới.
+3. **Cảnh báo lint vẫn hiện:** Có 5 dòng mức nặng QC1-02 dù coach đã miễn. Report và QC status ghi rõ từng ảnh và lý do; khi nộp cần giữ nguyên phần giải thích này.
 
-## Chặn gửi hiện tại
-
-- Phiếu QC1 nhận từ Nguyễn Trường Giang chưa thấy trong workspace; người nộp yêu cầu bổ sung sau.
-- Đã biết peer là Nguyễn Trường Giang; chưa có export để hoàn tất QC1 peer-review.
-
-Chưa thể xác nhận “đã sẵn sàng nộp” cho đến khi hoàn tất hai chặn còn lại. Xác nhận ngoại lệ QC1-02 của coach đã được cập nhật vào [báo cáo](NguyenVietQuang-report.md) và [lịch sử QC](NguyenVietQuang-qc1-history-draft.md).
+Ảnh chụp trong `submission/screenshots/` là tài nguyên nhúng trong report; `SUBMISSION.md` dặn không gửi ảnh rời. Không gửi các file này riêng nếu kênh nộp yêu cầu đúng số file.
