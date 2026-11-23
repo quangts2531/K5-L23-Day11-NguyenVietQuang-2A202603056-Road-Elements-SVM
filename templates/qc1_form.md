@@ -1,9 +1,13 @@
 # Phiếu QC 1 — Road v1.0
 
+Phiếu này ghi kết quả **kiểm thủ công lô của một bạn khác**. Không lấy số dòng `road_check lint` làm số lỗi QC1: lint chỉ gợi ý, không đối chiếu toàn bộ nhãn với GT. Chỉ đếm lỗi đã kiểm và xác nhận trên mẫu; nếu coach xác nhận QC1-02 là vị trí không có vạch nhìn thấy, ghi ngoại lệ ở “Ca mơ hồ” và không tính nó là lỗi đã xác nhận. Xác nhận miễn của coach không thay cho quyết định peer-review.
+
 Lô được kiểm (học viên):        Người kiểm (học viên):  
 Ngày:                          Phiên bản guideline: Road v1.0  
 File được kiểm (tên + `revision` trong manifest):  
 Số ảnh kiểm: 6 (+ __ ảnh thêm, ghi riêng)   Số nhãn đã kiểm (shape + tag):  
+
+Ảnh đã chọn kiểm thủ công: __, __, __, __, __, __.
 
 ## Tổng hợp theo mã
 | Mã | Loại lỗi | Số mục kiểm | Số lỗi | Mức |
